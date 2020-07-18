@@ -34,62 +34,48 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate{
     @objc func tapped(_ sender: UITapGestureRecognizer){
         // 自分が出した手の判定
         guard let myTag = sender.view?.tag else { return }
+        let myHand = returnHand(myTag)
         // CPUの出す手の判定
         let cpuTag = Int.random(in: 0..<3)
-
+        let cpuHand = returnHand(cpuTag)
         // CPUの画像を変更
         var image: UIImage?
-        if(cpuTag == 0) {
+        switch cpuHand {
+        case .gu:
             image =  UIImage(named:"gu")!
-        } else if(cpuTag ==  1) {
-            image =  UIImage(named:"pa")!
-        } else {
-            image =  UIImage(named:"choki")!
+        case .tyoki:
+           image =  UIImage(named:"choki")!
+        case.pa:
+           image = UIImage(named:"pa")!
         }
+
         computerImage.image = image
         
-        // 勝敗判定(0:勝ち、1:負け、2:あいこ)
-        let matchType = match(myTag: myTag, cpuTag: cpuTag)
-        // ラベルの変更
-        if(matchType == 0) {
+        // 勝敗判定(2:勝ち、1:負け、0:あいこ)
+        let judge = judgeLogic(myHand: myHand, cpuHand: cpuHand)
+        
+        switch judge {
+        case .win:
             status.text = "Yow Win!!"
-        } else if(matchType == 1) {
-            status.text = "Yow Loss"
-        } else if(matchType == 2) {
+        case .lose:
+            status.text = "You Loss"
+        case.draw:
             status.text = "あいこで！"
-        } else {
-            status.text = "値の取得に失敗しましたr"
         }
+        
     }
     
-    func match(myTag: Int, cpuTag: Int) -> Int {
-        switch myTag {
-        case 0:
-            if(cpuTag == 0) {
-                return 2
-            } else if( cpuTag == 1) {
-                return 1
-            } else {
-                return 0
-            }
-        case 1:
-            if(cpuTag == 0) {
-                return 0
-            } else if( cpuTag == 1) {
-                return 2
-            } else {
-                return 1
-            }
-        case 2:
-            if(cpuTag == 0) {
-                return 1
-            } else if( cpuTag == 1) {
-                return 0
-            } else {
-                return 2
-            }
-        default:
-            return 3
-        }
+    func returnHand(_ Tag:Int)->Hand{
+        return Hand(rawValue: Tag)!
     }
+    
+    func judgeLogic(myHand: Hand , cpuHand: Hand) ->Judge{
+        return Judge(rawValue: (myHand.rawValue-cpuHand.rawValue+3)%3)!
+        /*
+        winの場合 myHand: gu(0) cpuHand: tyoki(2) (0-2+3)%3 = 2
+        loseの場合 myHand: gu(0) cpuHand: pa(1) (0-1+3)%3 = 1
+        drawの場合 myHand: gu(0) cpuHand: tyoki(0) (0-0+3)%3 = 0
+        */
+    }
+
 }
