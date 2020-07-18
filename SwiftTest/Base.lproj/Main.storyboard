@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gu" translatesAutoresizingMaskIntoConstraints="NO" id="zNp-Y1-7xG">
+                                <rect key="frame" x="143" y="137" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zNp-Y1-7xG" secondAttribute="height" multiplier="1:1" id="X5b-bQ-4Y0"/>
+                                    <constraint firstAttribute="height" constant="128" id="q0J-Ub-yun"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最初はグー、じゃんけん！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kib-O8-waB">
+                                <rect key="frame" x="103" y="329" width="208" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gu" translatesAutoresizingMaskIntoConstraints="NO" id="kDm-9b-jgo">
+                                <rect key="frame" x="7" y="475" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kDm-9b-jgo" secondAttribute="height" multiplier="1:1" id="1G3-F7-Kb8"/>
+                                    <constraint firstAttribute="height" constant="128" id="LqF-f8-sef"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choki" translatesAutoresizingMaskIntoConstraints="NO" id="HzC-5O-On0">
+                                <rect key="frame" x="279" y="475" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="cXG-gJ-ks7"/>
+                                    <constraint firstAttribute="width" secondItem="HzC-5O-On0" secondAttribute="height" multiplier="1:1" id="k6N-Ll-uMs"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pa" translatesAutoresizingMaskIntoConstraints="NO" id="AUK-DB-fNC">
+                                <rect key="frame" x="143" y="475" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AUK-DB-fNC" secondAttribute="height" multiplier="1:1" id="1qW-xr-Dhp"/>
+                                    <constraint firstAttribute="height" constant="128" id="wN1-8O-Fmh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CPU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Er4-hx-UqY">
+                                <rect key="frame" x="182.5" y="76" width="49" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7k-AQ-vhB">
+                                <rect key="frame" x="182.5" y="414" width="49.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zNp-Y1-7xG" firstAttribute="top" secondItem="Er4-hx-UqY" secondAttribute="bottom" constant="32" id="A3M-lf-hym"/>
+                            <constraint firstItem="HzC-5O-On0" firstAttribute="leading" secondItem="AUK-DB-fNC" secondAttribute="trailing" constant="8" id="JHM-aQ-wl3"/>
+                            <constraint firstItem="Er4-hx-UqY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kkw-b8-e7D"/>
+                            <constraint firstItem="AUK-DB-fNC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lly-LL-8oU"/>
+                            <constraint firstItem="z7k-AQ-vhB" firstAttribute="top" secondItem="Kib-O8-waB" secondAttribute="bottom" constant="64" id="Q3f-2b-91c"/>
+                            <constraint firstItem="AUK-DB-fNC" firstAttribute="top" secondItem="kDm-9b-jgo" secondAttribute="top" id="QAk-P0-NGs"/>
+                            <constraint firstItem="zNp-Y1-7xG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RR5-en-Hou"/>
+                            <constraint firstItem="AUK-DB-fNC" firstAttribute="top" secondItem="z7k-AQ-vhB" secondAttribute="bottom" constant="32" id="gkD-PN-P1A"/>
+                            <constraint firstItem="z7k-AQ-vhB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j5F-Z4-ZcQ"/>
+                            <constraint firstItem="Er4-hx-UqY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="sQL-E7-V2Y"/>
+                            <constraint firstItem="HzC-5O-On0" firstAttribute="top" secondItem="kDm-9b-jgo" secondAttribute="top" id="tf0-jQ-A1a"/>
+                            <constraint firstItem="AUK-DB-fNC" firstAttribute="leading" secondItem="kDm-9b-jgo" secondAttribute="trailing" constant="8" id="u3X-E7-zOB"/>
+                            <constraint firstItem="Kib-O8-waB" firstAttribute="centerX" secondItem="z7k-AQ-vhB" secondAttribute="centerX" id="uaM-ai-Ndb"/>
+                            <constraint firstItem="Kib-O8-waB" firstAttribute="top" secondItem="zNp-Y1-7xG" secondAttribute="bottom" constant="64" id="y0Z-YD-th3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="computerImage" destination="zNp-Y1-7xG" id="e6h-Qp-Rsd"/>
+                        <outlet property="imageChoki" destination="HzC-5O-On0" id="dTz-Uy-SBn"/>
+                        <outlet property="imageGu" destination="kDm-9b-jgo" id="xaF-5X-XnT"/>
+                        <outlet property="imagePa" destination="AUK-DB-fNC" id="shw-os-oHm"/>
+                        <outlet property="status" destination="Kib-O8-waB" id="8Wd-JT-n73"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="118"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="choki" width="1403" height="1849"/>
+        <image name="gu" width="1447" height="1355"/>
+        <image name="pa" width="1666" height="1683"/>
+    </resources>
+</document>
