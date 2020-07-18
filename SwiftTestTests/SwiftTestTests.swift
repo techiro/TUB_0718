@@ -11,24 +11,43 @@ import XCTest
 
 class SwiftTestTests: XCTestCase {
 
+    /* じゃんけんの手
+     グー：0
+     パー：1
+     チョキ：2
+    */
+    /*
+     勝敗ステータス
+     0:勝ち
+     1:負け
+     2:引き分け
+     3:エラー
+     */
+    var viewController: ViewController!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.viewController = storyboard.instantiateInitialViewController() as? ViewController
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+    
+    func testWin() {
+
+    }
+    
+    func testLoss() {
+        
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDraw() {
+        
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testError() {
+        
     }
-
 }
